@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  participant: one
+  registry: one
+  coordinator: one
+  date_of_enrollment: 2023-07-11
+  method_of_contact: MyString
+  remarks: MyText
+
+two:
+  participant: two
+  registry: two
+  coordinator: two
+  date_of_enrollment: 2023-07-11
+  method_of_contact: MyString
+  remarks: MyText
