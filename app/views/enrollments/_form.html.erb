@@ -1,0 +1,49 @@
+<%= form_with(model: @enrollment, url: enrollment_path(@enrollment), method: :patch) do |form| %>
+  <% if @enrollment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enrollment.errors.count, "error") %> prohibited this enrollment from being saved:</h2>
+
+      <ul>
+        <% @enrollment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :participant_id %>
+    <%= form.collection_select :participant_id, Participant.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :registry_id %>
+    <%= form.collection_select :registry_id, Registry.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :coordinator_id %>
+    <%= form.collection_select :coordinator_id, Coordinator.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_of_enrollment %>
+    <%= form.date_field :date_of_enrollment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :method_of_contact %>
+    <%= form.text_field :method_of_contact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :remarks %>
+    <%= form.text_area :remarks %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Enrollment" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', enrollments_path %>

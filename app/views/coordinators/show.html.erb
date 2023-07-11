@@ -1,0 +1,32 @@
+<h1>Coordinator Details</h1>
+
+<p><strong>Name:</strong> <%= @coordinator.name %></p>
+<p><strong>Email:</strong> <%= @coordinator.email %></p>
+<p><strong>Phone Number:</strong> <%= @coordinator.phone_number %></p>
+
+<h2>Enrollments</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Registry</th>
+      <th>Date of Enrollment</th>
+      <th>Method of Contact</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.participant.name %></td>
+        <td><%= enrollment.registry.name %></td>
+        <td><%= enrollment.date_of_enrollment %></td>
+        <td><%= enrollment.method_of_contact %></td>
+        <td><%= enrollment.remarks %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_coordinator_path(@coordinator) %> |
+<%= link_to 'Back', coordinators_path %>

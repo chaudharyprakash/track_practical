@@ -1,0 +1,31 @@
+<h1>Enrollments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Participant</th>
+      <th>Registry</th>
+      <th>Coordinator</th>
+      <th>Date of Enrollment</th>
+      <th>Method of Contact</th>
+      <th>Remarks</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @enrollments.each do |enrollment| %>
+      <tr>
+        <td><%= enrollment.participant.name %></td>
+        <td><%= enrollment.registry.name %></td>
+        <td><%= enrollment.coordinator.name %></td>
+        <td><%= enrollment.date_of_enrollment %></td>
+        <td><%= enrollment.method_of_contact %></td>
+        <td><%= enrollment.remarks %></td>
+        <td><%= link_to 'Show', enrollment %></td>
+        <td><%= link_to 'Edit', edit_enrollment_path(enrollment) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Enrollment', new_enrollment_path %>

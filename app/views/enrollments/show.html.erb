@@ -1,0 +1,11 @@
+<h1>Enrollment Details</h1>
+
+<p><strong>Participant:</strong> <%= @enrollment.participant.name %></p>
+<p><strong>Registry:</strong> <%= @enrollment.registry.name %></p>
+<p><strong>Coordinator:</strong> <%= @enrollment.coordinator.name %></p>
+<p><strong>Date of Enrollment:</strong> <%= @enrollment.date_of_enrollment %></p>
+<p><strong>Method of Contact:</strong> <%= @enrollment.method_of_contact %></p>
+<p><strong>Remarks:</strong> <%= @enrollment.remarks %></p>
+
+<%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
+<%= link_to 'Back', enrollments_path %>

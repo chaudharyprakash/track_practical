@@ -1,0 +1,8 @@
+<h1>Participant Details</h1>
+
+<p><strong>Name:</strong> <%= @participant.name %></p>
+<p><strong>Gender:</strong> <%= @participant.gender %></p>
+<p><strong>Date of Birth:</strong> <%= @participant.date_of_birth %></p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

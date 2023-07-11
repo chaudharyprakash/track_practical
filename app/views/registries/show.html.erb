@@ -1,0 +1,20 @@
+<h1>Registry Details</h1>
+
+<p><strong>Name:</strong> <%= @registry.name %></p>
+<p><strong>Location:</strong> <%= @registry.location %></p>
+<p><strong>State:</strong> <%= @registry.state %></p>
+
+<h2>Enrolled Participants</h2>
+<% @participants_by_coordinator.each do |coordinator, participants| %>
+  <h3><%= coordinator.name %></h3>
+  <% participants.each do |participant| %>
+    <p><%= participant.name %></p>
+  <% end %>
+<% end %>
+
+<h2>Coordinators</h2>
+<% @registry.coordinators.each do |coordinator| %>
+  <p><strong>Name:</strong> <%= coordinator.name %></p>
+  <p><strong>Email:</strong> <%= coordinator.email %></p>
+  <p><strong>Phone Number:</strong> <%= coordinator.phone_number %></p>
+<% end %>
